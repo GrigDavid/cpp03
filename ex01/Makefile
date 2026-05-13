@@ -1,11 +1,11 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = Fixed.cpp main.cpp
+SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = Fixed
+NAME = ScavTrap
 
 
-all: $(NAME)
+a ScavTrap.cppll: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $^ -o $@

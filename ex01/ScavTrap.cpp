@@ -1,20 +1,20 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap(), _guardingGate(false)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
 
 }
-ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other), _guardingGate(false)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
 }
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name), _guardingGate(false)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;

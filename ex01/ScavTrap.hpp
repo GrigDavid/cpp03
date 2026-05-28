@@ -16,7 +16,7 @@ class ScavTrap : public ClapTrap
 		void beRepaired(unsigned int amount);
 		void guardGate();
 	private:
-		bool		_guardingGate = false;
+		bool		_guardingGate;
 };
 
 #endif

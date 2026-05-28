@@ -11,14 +11,14 @@ FragTrap::FragTrap() : ClapTrap()
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 {
 	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
+	_energyPoints = 100;
+	_attackDamage = 30;
 }
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
 	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	// std::cout << "FragTrap " << name << " was created!" << std::endl;
 }
 FragTrap& FragTrap::operator=(const FragTrap& other)

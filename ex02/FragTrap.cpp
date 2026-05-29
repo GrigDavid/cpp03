@@ -33,9 +33,14 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys(void)
 {
-	if (_energyPoints == 0 || _hitPoints == 0)
+	if (_energyPoints == 0)
 	{
 		std::cout << "FragTrap " << _name << " doesn't have enough energy points!" << std::endl;
+		return ;
+	}
+	else if ( _hitPoints == 0)
+	{
+		std::cout << "FragTrap " << _name << " doesn't have enough hit points!" << std::endl;
 		return ;
 	}
 	std::cout << "FragTrap " << _name << " is requesting a high five!" << std::endl;

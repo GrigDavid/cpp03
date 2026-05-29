@@ -38,9 +38,14 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (_energyPoints == 0 || _hitPoints == 0)
+	if (_energyPoints == 0)
 	{
 		std::cout << "ScavTrap " << _name << " doesn't have enough energy points!" << std::endl;
+		return ;
+	}
+	else if ( _hitPoints == 0)
+	{
+		std::cout << "ScavTrap " << _name << " doesn't have enough hit points!" << std::endl;
 		return ;
 	}
 	std::cout <<"ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage <<" points of damage!" << std::endl;
@@ -49,9 +54,14 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate()
 {
-	if (_energyPoints == 0 || _hitPoints == 0)
+	if (_energyPoints == 0)
 	{
 		std::cout << "ScavTrap " << _name << " doesn't have enough energy points!" << std::endl;
+		return ;
+	}
+	else if ( _hitPoints == 0)
+	{
+		std::cout << "ScavTrap " << _name << " doesn't have enough hit points!" << std::endl;
 		return ;
 	}
 	if (_guardingGate)

@@ -24,13 +24,11 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name), _guardingGate(fals
 }
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-	std::cout << "ScavTrap " << other._name << " was assigned to " << _name << std::endl;
 	if (this == &other)
 		return (*this);
-	ClapTrap::operator=(other);//
+	ClapTrap::operator=(other);
 	_guardingGate = other._guardingGate;
 	return (*this);
-	
 }
 
 ScavTrap::~ScavTrap()
@@ -40,7 +38,7 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (_energyPoints <= 0)
+	if (_energyPoints == 0 || _hitPoints == 0)
 	{
 		std::cout << "ScavTrap " << _name << " doesn't have enough energy points!" << std::endl;
 		return ;
@@ -49,30 +47,20 @@ void ScavTrap::attack(const std::string& target)
 	_energyPoints--;
 }
 
-void ScavTrap::takeDamage(unsigned int amount)
+void ScavTrap::guardGate()
 {
-	if (amount > _hitPoints)
+	if (_energyPoints == 0 || _hitPoints == 0)
 	{
-		amount = _hitPoints;
+		std::cout << "ScavTrap " << _name << " doesn't have enough energy points!" << std::endl;
+		return ;
 	}
-	_hitPoints -= amount;
-	std::cout << "ScavTrap " << _name << " took " << amount << " damage!" << std::endl;
-}
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if (_energyPoints > 0)
+	if (_guardingGate)
 	{
-		_hitPoints += amount;
-		_energyPoints--;
-		std::cout << "ScavTrap " << _name << " repaired " << amount << " hit points!" << std::endl;
+		std::cout << "ScavTrap " << _name << " was already in Gate keeper mode!" << std::endl;
 	}
 	else
 	{
-		std::cout << "ScavTrap " << _name << " doesn't have enough energy points!" << std::endl;
+		_guardingGate = true;
+		std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!" << std::endl;
 	}
-}
-void ScavTrap::guardGate()
-{
-	_guardingGate = true;
-	std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!" << std::endl;
 }

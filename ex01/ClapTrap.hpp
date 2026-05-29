@@ -15,10 +15,10 @@ class ClapTrap
 		virtual void takeDamage(unsigned int amount);
 		virtual void beRepaired(unsigned int amount);
 	protected:
-		std::string	_name;
-		int			_hitPoints = 10;
-		int			_energyPoints = 10;
-		int			_attackDamage = 0;
+		std::string		_name;
+		unsigned int	_hitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage;
 };
 
 #endif

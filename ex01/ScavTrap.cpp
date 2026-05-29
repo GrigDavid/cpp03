@@ -6,26 +6,28 @@ ScavTrap::ScavTrap() : ClapTrap(), _guardingGate(false)
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-
+	std::cout << "ScavTrap default constructor called!" << std::endl;
 }
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other), _guardingGate(false)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+	std::cout << "ScavTrap " << _name << " was created using copy constructor!" << std::endl;
 }
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name), _guardingGate(false)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	// std::cout << "ScavTrap " << name << " was created!" << std::endl;
+	std::cout << "ScavTrap " << _name << " was created!" << std::endl;
 }
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
+	std::cout << "ScavTrap " << other._name << " was assigned to " << _name << std::endl;
 	if (this == &other)
 		return (*this);
-	ClapTrap::operator=(other);
+	ClapTrap::operator=(other);//
 	_guardingGate = other._guardingGate;
 	return (*this);
 	
@@ -33,6 +35,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 
 ScavTrap::~ScavTrap()
 {
+	std::cout << "ScavTrap " << _name << " was destroyed!" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)

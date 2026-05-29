@@ -6,32 +6,37 @@ FragTrap::FragTrap() : ClapTrap()
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-
+	std::cout << "FragTrap default constructor called!" << std::endl;
 }
+
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 {
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
+	std::cout << "FragTrap " << _name << " was created using copy constructor!" << std::endl;
 }
+
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-	// std::cout << "FragTrap " << name << " was created!" << std::endl;
+	std::cout << "FragTrap " << _name << " was created!" << std::endl;
 }
+
 FragTrap& FragTrap::operator=(const FragTrap& other)
 {
+	std::cout << "FragTrap " << other._name << " was assigned to " << _name << std::endl;
 	if (this == &other)
 		return (*this);
 	ClapTrap::operator=(other);
 	return (*this);
-	
 }
 
 FragTrap::~FragTrap()
 {
+	std::cout << "FragTrap " << _name << " was destroyed!" << std::endl;
 }
 
 void FragTrap::attack(const std::string& target)
@@ -54,6 +59,7 @@ void FragTrap::takeDamage(unsigned int amount)
 	_hitPoints -= amount;
 	std::cout << "FragTrap " << _name << " took " << amount << " damage!" << std::endl;
 }
+
 void FragTrap::beRepaired(unsigned int amount)
 {
 	if (_energyPoints > 0)

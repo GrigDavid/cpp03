@@ -28,6 +28,12 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap " << _name << " was destroyed!" << std::endl;
 }
 
+FragTrap&	FragTrap::operator=(const FragTrap& other)
+{
+	ClapTrap::operator=(other);
+	return (*this);
+}
+
 void FragTrap::highFivesGuys(void)
 {
 	if (_hitPoints == 0)

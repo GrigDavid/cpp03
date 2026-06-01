@@ -10,9 +10,6 @@ ScavTrap::ScavTrap() : ClapTrap(), _guardingGate(false)
 }
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other), _guardingGate(false)
 {
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
 	std::cout << "ScavTrap " << _name << " was created using copy constructor!" << std::endl;
 }
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name), _guardingGate(false)

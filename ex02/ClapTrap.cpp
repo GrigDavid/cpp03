@@ -21,7 +21,6 @@ _attackDamage(other._attackDamage)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
-	std::cout << "ClapTrap " << other._name << " was assigned to " << _name << std::endl;
 	if (this == &other)
 		return (*this);
 	_name = other._name;

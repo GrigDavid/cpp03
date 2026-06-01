@@ -20,8 +20,6 @@ int main()
 	{
 		valMladshiy.takeDamage(7);
 	}
-	
-	
 
 	return (0);
 }

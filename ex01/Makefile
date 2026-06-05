@@ -5,7 +5,7 @@ OBJS = $(SRCS:.cpp=.o)
 NAME = ScavTrap
 
 
-a ScavTrap.cppll: $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
